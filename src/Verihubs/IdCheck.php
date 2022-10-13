@@ -1,6 +1,6 @@
 <?php
 
-namespace Rhmt\Verihubs;
+namespace Rhmt\Verihubs\Verihubs;
 
 use Rhmt\Verihubs\Exceptions\VerihubsException;
 use Rhmt\Verihubs\Requests\Request;
@@ -86,7 +86,7 @@ class IdCheck
         $properties = $this->toArray();
 
         foreach ($properties as $key => $property) {
-            if (is_null($properties[$key]) || empty($properties[$key])) {
+            if (!in_array($key, ['name', 'birthPlace', 'birthDate', 'image']) && (is_null($properties[$key]) || empty($properties[$key]))) {
                 throw new VerihubsException(sprintf('The %s needs to be set before calling %s::get()', $key, __CLASS__));
             }
         }

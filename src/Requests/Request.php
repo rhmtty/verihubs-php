@@ -5,8 +5,6 @@ namespace Rhmt\Verihubs\Requests;
 class Request
 {
     private $config;
-    private $appID;
-    private $apiKey;
 
     public function __construct(Config $config)
     {
@@ -75,6 +73,7 @@ class Request
 
         $results = [
             'request' => [
+                // 'api' => $urlApi,
                 'endpoint' => $endpoint,
                 'method' => $method,
                 'headers' => $headers,

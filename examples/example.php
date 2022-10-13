@@ -2,12 +2,12 @@
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-use Rhmt\Verihubs\IdCheck;
 use Rhmt\Verihubs\Requests\Config;
 use Rhmt\Verihubs\Requests\Request;
+use Rhmt\Verihubs\Verihubs\IdCheck;
 
-$appID = '97da3c54-fed3-4b03-a650-308bd833067a';
-$apiKey = 'i1WjxnLqC1cAXmCCQTXW/v/KJXaM9k40';
+$appID = 'f339aec1-7bf5-4547-80fe-2c87550d9d12';
+$apiKey = 'k9tHGSAh8fdZ8U7gOp+TDcOOaR+CNzm+';
 
 // 1. Set Config
 $config = (new Config())
@@ -27,9 +27,9 @@ $request = new Request($config);
 // Contoh id check
 $idCheck = (new IdCheck($request))
     ->setNik('3539142907980003')
-    ->setName('Rohmat Tri Yulianto')
-    ->setBirthDate('29-07-1998');
+    ->get();
 
-$res = $idCheck->get();
-echo json_encode(json_decode($tf), JSON_PRETTY_PRINT);
+print_r($idCheck);
+// $res = json_decode($idCheck);
+// print_r($res);
 exit;
