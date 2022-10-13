@@ -1,0 +1,20 @@
+{
+    "name": "rhmt/verihubs-php",
+    "description": "Integration library for Verihubs",
+    "keywords": [
+        "verifhubs",
+        "liveness"
+    ],
+    "homepage": "https://github.com/rhmtty/verihubs-php",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^5.4|^7|^8",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rhmt\\Verihubs\\": "src/"
+        }
+    }
+}

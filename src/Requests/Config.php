@@ -2,8 +2,8 @@
 
 namespace Rhmt\Verihubs\Requests;
 
-use Rhmt\Verihubs\Exceptions\VerihubsException;
 use ReflectionClass;
+use Rhmt\Verihubs\Exceptions\VerihubsException;
 
 class Config
 {
@@ -38,6 +38,7 @@ class Config
     public function setDevelopment($state = true)
     {
         $this->isDevelopment = boolval($state);
+        return $this;
     }
 
     /**
@@ -97,7 +98,7 @@ class Config
 
         foreach ($properties as $property) {
             if (null === $this->{$property->name}) {
-                throw new VerihubsException(sprintf('The %s config nedds to be set before using this library', $property->name));
+                throw new VerihubsException(sprintf('The %s config needs to be set before using this library', $property->name));
             }
         }
     }

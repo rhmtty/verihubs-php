@@ -1,3 +1,52 @@
-vendor
-/example.php
+# Phpstorm
+.idea
+*.iml
+
+# Netbeans
+nbproject
+
+# Zend studio eclipse
+.buildpath
+.project
+.settings
+
+# Sublime text
+*.sublime-project
+*.sublime-workspace
+/.phpintel
+
+# Vscode
+.vscode
+
+# Cache thumbnail windows
+Thumbs.db
+
+# Composer
+composer.phar
 composer.lock
+/vendor
+
+# Mac
+.DS_Store
+
+# Phpunit
+phpunit.phar
+phpunit.xml
+.phpunit.result.cache
+
+# Nodejs
+/node_modules
+npm-debug.log
+yarn-error.log
+.env.backup
+.env
+
+# Others
+*.phar
+
+# Key Pair
+/public_key.pem
+/private_key.pem
+
+# example
+/example.php

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rhmt\Verihubs\IdCheck;
+namespace Rhmt\Verihubs;
 
 use Rhmt\Verihubs\Exceptions\VerihubsException;
 use Rhmt\Verihubs\Requests\Request;
