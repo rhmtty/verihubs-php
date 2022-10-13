@@ -19,7 +19,7 @@ class Request
 
         $method = strtoupper($method);
         $headers = [
-            'API-ID:' . $this->config->getAppId(),
+            'App-ID:' . $this->config->getAppId(),
             'API-Key:' . $this->config->getApiKey(),
             'accept: application/json',
             'content-type: application/json'
