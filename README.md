@@ -5,7 +5,7 @@ Integration library for Verihubs
 composer require rhmt/verihubs-php
 ```
 ## Usage
-```
+```php
 <?php
 
 require dirname(__DIR__) . '/vendor/autoload.php';
@@ -65,5 +65,4 @@ print_r($liveness);
 // $responseObj = json_decode($liveness);
 // print_r($responseObj);
 exit;
-
 ```
