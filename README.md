@@ -12,12 +12,11 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 use Rhmt\Verihubs\Requests\Config;
 use Rhmt\Verihubs\Requests\Request;
-use Rhmt\Verihubs\Support\Helper;
 use Rhmt\Verihubs\Verihubs\IdCheck;
 use Rhmt\Verihubs\Verihubs\Liveness;
 
-$appID = 'your_appID';
-$apiKey = 'yourApikey';
+$appID = 'yourAppID';
+$apiKey = 'yourApiKey';
 
 // 1. Set Config
 $config = (new Config())
@@ -35,7 +34,6 @@ $request = new Request($config);
 */
 
 $img = file_get_contents('./img.jpg');
-$base64Image = Helper::convertImageToBase64($img);
 
 // CONTOH: id check
 // $idCheck = (new IdCheck($request))
@@ -43,7 +41,7 @@ $base64Image = Helper::convertImageToBase64($img);
 //     // ->setName('') // Optional
 //     // ->setBirthDate('') // Optional
 //     // ->setBirthPlace('') // Optional
-//     // ->setImage($base64Image) // Optional
+//     // ->setImage($img) // Optional
 //     ->get();
 
 // print_r($idCheck);
@@ -54,7 +52,7 @@ $base64Image = Helper::convertImageToBase64($img);
 
 // CONTOH: Liveness
 $liveness = (new Liveness($request))
-    ->setImage($base64Image)
+    ->setImage($img)
     // ->setisQuality() // Optional
     // ->setIsAttribute() // Optional
     // ->setValidateQuality('') // Optional
