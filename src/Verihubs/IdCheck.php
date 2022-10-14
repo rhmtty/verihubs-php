@@ -4,6 +4,7 @@ namespace Rhmt\Verihubs\Verihubs;
 
 use Rhmt\Verihubs\Exceptions\VerihubsException;
 use Rhmt\Verihubs\Requests\Request;
+use Rhmt\Verihubs\Support\Helper;
 
 class IdCheck
 {
@@ -53,7 +54,7 @@ class IdCheck
     // Optional
     public function setImage($image)
     {
-        $this->image = $image;
+        $this->image = Helper::convertImageToBase64($image);
         return $this;
     }
 

@@ -4,6 +4,7 @@ namespace Rhmt\Verihubs\Verihubs;
 
 use Rhmt\Verihubs\Exceptions\VerihubsException;
 use Rhmt\Verihubs\Requests\Request;
+use Rhmt\Verihubs\Support\Helper;
 
 class Liveness
 {
@@ -24,9 +25,9 @@ class Liveness
      * Setters
      */
 
-    public function setImage(string $image)
+    public function setImage($image)
     {
-        $this->image = $image;
+        $this->image = Helper::convertImageToBase64($image);
         return $this;
     }
 
