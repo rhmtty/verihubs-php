@@ -4,17 +4,18 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 use Rhmt\Verihubs\Requests\Config;
 use Rhmt\Verihubs\Requests\Request;
+use Rhmt\Verihubs\Support\Helper;
 use Rhmt\Verihubs\Verihubs\IdCheck;
 use Rhmt\Verihubs\Verihubs\Liveness;
 
-$appID = env('appIdDev', '');
-$apiKey = env('apiKeyDev', '');
+$appID = 'your_appID';
+$apiKey = 'yourApikey';
 
 // 1. Set Config
 $config = (new Config())
     ->setAppId($appID)
-    ->setApiKey($apiKey)
-    ->setDevelopment(true);
+    ->setApiKey($apiKey);
+// ->setDevelopment(true);
 
 // 2. Setup Request
 $request = new Request($config);
@@ -25,33 +26,34 @@ $request = new Request($config);
 |--------------------------------------------------------------------------
 */
 
-// Contoh id check
-$idCheck = (new IdCheck($request))
-    ->setNik('3539142907980003')
-    ->setName('') // Optional
-    ->setBirthDate('') // Optional
-    ->setBirthPlace('') // Optional
-    ->setImage('') // Optional
-    ->get();
+$img = file_get_contents('./img.jpg');
+$base64Image = Helper::convertImageToBase64($img);
+
+// CONTOH: id check
+// $idCheck = (new IdCheck($request))
+//     ->setNik('3519142907980003')
+//     // ->setName('') // Optional
+//     // ->setBirthDate('') // Optional
+//     // ->setBirthPlace('') // Optional
+//     // ->setImage($base64Image) // Optional
+//     ->get();
 
 // print_r($idCheck);
-$res = json_decode($idCheck);
-print_r($res->response->body);
-exit;
+// // $res = json_decode($idCheck);
+// // print_r($res);
+// exit;
 
 
-// Contoh Liveness
-$img = file_get_contents('./img.jpg');
-$base64Img = base64_encode($img);
-
+// CONTOH: Liveness
 $liveness = (new Liveness($request))
-    ->setImage($base64Img)
-    ->setisQuality('') // Optional
-    ->setIsAttribute('') // Optional
-    ->setValidateQuality('') // Optional
-    ->setValidateAttribute('') // Optional
+    ->setImage($base64Image)
+    // ->setisQuality() // Optional
+    // ->setIsAttribute() // Optional
+    // ->setValidateQuality('') // Optional
+    // ->setValidateAttribute('') // Optional
     ->get();
 
-$responseObj = json_decode($liveness);
-print_r($responseObj->response->body);
+print_r($liveness);
+// $responseObj = json_decode($liveness);
+// print_r($responseObj);
 exit;

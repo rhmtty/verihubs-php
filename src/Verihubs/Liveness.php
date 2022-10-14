@@ -24,37 +24,37 @@ class Liveness
      * Setters
      */
 
-    public function setImage($image)
+    public function setImage(string $image)
     {
         $this->image = $image;
         return $this;
     }
 
     // Optional
-    public function setisQuality($isQuality)
+    public function setisQuality($isQuality = true)
     {
-        $this->isQuality = $isQuality;
+        $this->isQuality = boolval($isQuality);
         return $this;
     }
 
     // Optional
-    public function setIsAttribute($IsAttribute)
+    public function setIsAttribute($IsAttribute = true)
     {
-        $this->IsAttribute = $IsAttribute;
+        $this->IsAttribute = boolval($IsAttribute);
         return $this;
     }
 
     // Optional
-    public function setValidateQuality($ValidateQuality)
+    public function setValidateQuality($ValidateQuality = false)
     {
-        $this->ValidateQuality = $ValidateQuality;
+        $this->ValidateQuality = boolval($ValidateQuality);
         return $this;
     }
 
     // Optional
-    public function setValidateAttribute($ValidateAttribute)
+    public function setValidateAttribute($ValidateAttribute = false)
     {
-        $this->ValidateAttribute = $ValidateAttribute;
+        $this->ValidateAttribute = boolval($ValidateAttribute);
         return $this;
     }
 
