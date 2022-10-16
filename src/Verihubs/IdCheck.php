@@ -47,7 +47,7 @@ class IdCheck
     // Optional
     public function setBirthDate($birthDate)
     {
-        $this->birthDate = $birthDate;
+        $this->birthDate = date('d-m-Y', strtotime($birthDate));
         return $this;
     }
 
