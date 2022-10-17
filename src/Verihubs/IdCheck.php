@@ -54,7 +54,7 @@ class IdCheck
     // Optional
     public function setImage($image)
     {
-        $this->image = Helper::convertImageToBase64($image);
+        $this->image = $image;
         return $this;
     }
 
@@ -67,8 +67,8 @@ class IdCheck
         return  [
             'nik' => $this->nik,
             'name' => $this->name,
-            'birthPlace' => $this->birthPlace,
-            'birthDate' => $this->birthDate,
+            'birth_place' => $this->birthPlace,
+            'birth_date' => $this->birthDate,
             'image' => $this->image,
         ];
     }
