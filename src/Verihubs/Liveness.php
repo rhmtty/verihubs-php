@@ -27,7 +27,7 @@ class Liveness
 
     public function setImage($image)
     {
-        $this->image = Helper::convertImageToBase64($image);
+        $this->image = $image;
         return $this;
     }
 
@@ -67,10 +67,10 @@ class Liveness
     {
         return  [
             'image' => $this->image,
-            'isQuality' => $this->isQuality,
-            'isAttribute' => $this->isAttribute,
-            'validateQuality' => $this->validateQuality,
-            'validateAttribute' => $this->validateAttribute,
+            'is_quality' => $this->isQuality,
+            'is_attribute' => $this->isAttribute,
+            'validate_quality' => $this->validateQuality,
+            'validate_attribute' => $this->validateAttribute,
         ];
     }
 
