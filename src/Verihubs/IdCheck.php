@@ -87,7 +87,7 @@ class IdCheck
         $properties = $this->toArray();
 
         foreach ($properties as $key => $property) {
-            if (!in_array($key, ['name', 'birthPlace', 'birthDate', 'image']) && (is_null($properties[$key]) || empty($properties[$key]))) {
+            if (!in_array($key, ['name', 'birth_place', 'birth_date', 'image']) && (is_null($properties[$key]) || empty($properties[$key]))) {
                 throw new VerihubsException(sprintf('The %s needs to be set before calling %s::get()', $key, __CLASS__));
             }
         }
