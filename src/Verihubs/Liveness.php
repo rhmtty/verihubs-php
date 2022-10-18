@@ -88,7 +88,7 @@ class Liveness
         $properties = $this->toArray();
 
         foreach ($properties as $key => $property) {
-            if (!in_array($key, ['isQuality', 'isAttribute', 'validateQuality', 'validateAttribute']) && (is_null($properties[$key]) || empty($properties[$key]))) {
+            if (!in_array($key, ['is_quality', 'is_attribute', 'validate_quality', 'validate_attribute']) && (is_null($properties[$key]) || empty($properties[$key]))) {
                 throw new VerihubsException(sprintf('The %s needs to be set before calling %s::get()', $key, __CLASS__));
             }
         }
