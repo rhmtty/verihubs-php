@@ -7,11 +7,11 @@ use Rhmt\Verihubs\Requests\Request;
 use Rhmt\Verihubs\Verihubs\IdCheck;
 use Rhmt\Verihubs\Verihubs\Liveness;
 
-$appID = '97da3c54-fed3-4b03-a650-308bd833067a';
-$apiKey = 'knnThfxflw4gBUpH3hoUCJFm5W5DPNOI';
+// $appID = '97da3c54-fed3-4b03-a650-308bd833067a';
+// $apiKey = 'knnThfxflw4gBUpH3hoUCJFm5W5DPNOI';
 
-$VERIHUBS_APPID = '3330ce56-e22a-4ec2-b841-3bb2a15d1de7';
-$VERIHUBS_APIKEY = 'AxOosiDuC+HVPLeFHMfmfuILhneX5z6D';
+$VERIHUBS_APPID = 'your_appid';
+$VERIHUBS_APIKEY = 'your_apikey';
 
 // 1. Set Config
 $config = (new Config())
@@ -33,17 +33,15 @@ $base64 = base64_encode($img);
 
 // CONTOH: id check
 $idCheck = (new IdCheck($request))
-    ->setNik('3519142907980003')
+    ->setNik('35191429079xxxxx')
     ->setName('Rohmat TY')
     ->setBirthDate('29-07-1998')
     ->setBirthPlace('Madiun')
     ->setEmail('rohmat.triy@gmail.com')
-    ->setPhone('6285707839650')
+    ->setPhone('6285707839xxx')
     ->setImage($base64)
     ->get();
 
-print_r($idCheck);
-exit;
 $res = json_decode($idCheck);
 print_r($res);
 exit;
