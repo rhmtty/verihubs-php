@@ -2,8 +2,9 @@
     "name": "rhmt/verihubs-php",
     "description": "Integration library for Verihubs",
     "keywords": [
-        "verifhubs",
-        "liveness"
+        "verihubs",
+        "liveness",
+        "idcheck"
     ],
     "homepage": "https://github.com/rhmtty/verihubs-php",
     "type": "library",

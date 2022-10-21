@@ -11,8 +11,10 @@ class IdCheck
     private $request;
     private $nik;
     private $name;
-    private $birthPlace;
     private $birthDate;
+    private $birthPlace;
+    private $email;
+    private $phone;
     private $image;
 
     public function __construct(Request $request)
@@ -30,28 +32,37 @@ class IdCheck
         return $this;
     }
 
-    // Optional
+
     public function setName($name)
     {
         $this->name = $name;
         return $this;
     }
 
-    // Optional
-    public function setBirthPlace($birthPlace)
-    {
-        $this->birthPlace = $birthPlace;
-        return $this;
-    }
-
-    // Optional
     public function setBirthDate($birthDate)
     {
         $this->birthDate = date('d-m-Y', strtotime($birthDate));
         return $this;
     }
 
-    // Optional
+    public function setBirthPlace($birthPlace)
+    {
+        $this->birthPlace = $birthPlace;
+        return $this;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+        return $this;
+    }
+
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+        return $this;
+    }
+
     public function setImage($image)
     {
         $this->image = $image;
@@ -70,6 +81,8 @@ class IdCheck
             'birth_place' => $this->birthPlace,
             'birth_date' => $this->birthDate,
             'image' => $this->image,
+            'email' => $this->email,
+            'phone' => $this->phone,
         ];
     }
 
@@ -87,8 +100,8 @@ class IdCheck
         $properties = $this->toArray();
 
         foreach ($properties as $key => $property) {
-            if (!in_array($key, ['name', 'birth_place', 'birth_date', 'image']) && (is_null($properties[$key]) || empty($properties[$key]))) {
-                throw new VerihubsException(sprintf('The %s needs to be set before calling %s::get()', $key, __CLASS__));
+            if (is_null($properties[$key]) || empty($properties[$key])) {
+                throw new VerihubsException(sprintf('The %s needs to be set %s::get()', $key, __CLASS__));
             }
         }
     }
