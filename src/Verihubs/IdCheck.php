@@ -4,7 +4,6 @@ namespace Rhmt\Verihubs\Verihubs;
 
 use Rhmt\Verihubs\Exceptions\VerihubsException;
 use Rhmt\Verihubs\Requests\Request;
-use Rhmt\Verihubs\Support\Helper;
 
 class IdCheck
 {
@@ -16,6 +15,7 @@ class IdCheck
     private $email;
     private $phone;
     private $image;
+    private $ktp;
 
     public function __construct(Request $request)
     {
@@ -69,6 +69,12 @@ class IdCheck
         return $this;
     }
 
+    public function setKtp($image)
+    {
+        $this->ktp = $image;
+        return $this;
+    }
+
     /**
      * Getters
      */
@@ -83,6 +89,7 @@ class IdCheck
             'image' => $this->image,
             'email' => $this->email,
             'phone' => $this->phone,
+            'ktp' => $this->ktp,
         ];
     }
 

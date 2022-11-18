@@ -30,13 +30,14 @@ $base64 = base64_encode($img);
 
 // CONTOH: id check
 $idCheck = (new IdCheck($request))
-    ->setNik('3519142907980003')
-    ->setName('Rohmat TY')
-    ->setBirthDate('29-07-1998')
+    ->setNik('351914290*******')
+    ->setName('Asepudin')
+    ->setBirthDate('29-07-1922')
     ->setBirthPlace('Madiun')
-    ->setEmail('rohmat.triy@gmail.com')
-    ->setPhone('6285707839650')
-    ->setImage('https://assets.tripay.co.id/upload/verification/20178-MkYDnxb8oc2Na0fBDC6TdP85f42Cdg.jpeg')
+    ->setEmail('your@email.com')
+    ->setPhone('6285707831337')
+    ->setImage($base64)
+    ->setKtp('ktp_in_base64')
     ->get();
 
 $res = json_decode($idCheck);
