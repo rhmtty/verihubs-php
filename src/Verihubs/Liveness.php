@@ -41,21 +41,21 @@ class Liveness
     // Optional
     public function setIsAttribute($IsAttribute = true)
     {
-        $this->IsAttribute = boolval($IsAttribute);
+        $this->isAttribute = boolval($IsAttribute);
         return $this;
     }
 
     // Optional
     public function setValidateQuality($ValidateQuality = false)
     {
-        $this->ValidateQuality = boolval($ValidateQuality);
+        $this->validateQuality = boolval($ValidateQuality);
         return $this;
     }
 
     // Optional
     public function setValidateAttribute($ValidateAttribute = false)
     {
-        $this->ValidateAttribute = boolval($ValidateAttribute);
+        $this->validateAttribute = boolval($ValidateAttribute);
         return $this;
     }
 
@@ -102,7 +102,7 @@ class Liveness
     {
         $this->validate();
 
-        $endpoint = '/face/liveness';
+        $endpoint = '/data-verification/certificate-electronic/verify';
         $payloads = $this->toArray();
 
         return $this->request->post($endpoint, $payloads);

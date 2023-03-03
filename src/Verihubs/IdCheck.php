@@ -11,11 +11,10 @@ class IdCheck
     private $nik;
     private $name;
     private $birthDate;
-    private $birthPlace;
     private $email;
     private $phone;
-    private $image;
-    private $ktp;
+    private $selfiePhoto;
+    private $ktpPhoto;
 
     public function __construct(Request $request)
     {
@@ -45,12 +44,6 @@ class IdCheck
         return $this;
     }
 
-    public function setBirthPlace($birthPlace)
-    {
-        $this->birthPlace = $birthPlace;
-        return $this;
-    }
-
     public function setEmail($email)
     {
         $this->email = $email;
@@ -63,15 +56,15 @@ class IdCheck
         return $this;
     }
 
-    public function setImage($image)
+    public function setImage($selfiePhoto)
     {
-        $this->image = $image;
+        $this->selfiePhoto = $selfiePhoto;
         return $this;
     }
 
-    public function setKtp($image)
+    public function setKtp($ktpPhoto)
     {
-        $this->ktp = $image;
+        $this->ktpPhoto = $ktpPhoto;
         return $this;
     }
 
@@ -84,12 +77,11 @@ class IdCheck
         return  [
             'nik' => $this->nik,
             'name' => $this->name,
-            'birth_place' => $this->birthPlace,
             'birth_date' => $this->birthDate,
-            'image' => $this->image,
             'email' => $this->email,
             'phone' => $this->phone,
-            'ktp' => $this->ktp,
+            'selfie_photo' => $this->selfiePhoto,
+            'ktp_photo' => $this->ktpPhoto,
         ];
     }
 
@@ -121,7 +113,7 @@ class IdCheck
     {
         $this->validate();
 
-        $endpoint = '/id/check';
+        $endpoint = '/data-verification/certificate-electronic/verify';
         $payloads = $this->toArray();
 
         return $this->request->post($endpoint, $payloads);

@@ -15,8 +15,8 @@ class Config
 
     public function __construct($sandboxUrl = null, $productionUrl = null)
     {
-        $this->sandboxUrl = is_null($sandboxUrl) ? 'https://api.verihubs.com/v1' : rtrim($sandboxUrl, '/');
-        $this->productionUrl = is_null($productionUrl) ? 'https://api.verihubs.com/v1' : rtrim($productionUrl, '/');
+        $this->sandboxUrl = is_null($sandboxUrl) ? 'https://api.verihubs.com/' : rtrim($sandboxUrl, '/');
+        $this->productionUrl = is_null($productionUrl) ? 'https://api.verihubs.com/' : rtrim($productionUrl, '/');
     }
 
     /**
