@@ -37,6 +37,7 @@ $idCheck = (new IdCheck($request))
     ->setPhone('6285707831337')
     ->setImage($base64)
     ->setKtp('ktp_in_base64')
+    ->setChannel('Your Brand Name')
     ->get();
 
 $res = json_decode($idCheck);

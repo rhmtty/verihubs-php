@@ -15,6 +15,7 @@ class IdCheck
     private $phone;
     private $selfiePhoto;
     private $ktpPhoto;
+    private $channel;
 
     public function __construct(Request $request)
     {
@@ -68,6 +69,12 @@ class IdCheck
         return $this;
     }
 
+    public function setChannel($channel)
+    {
+        $this->channel = $channel;
+        return $this;
+    }
+
     /**
      * Getters
      */
@@ -82,6 +89,7 @@ class IdCheck
             'phone' => $this->phone,
             'selfie_photo' => $this->selfiePhoto,
             'ktp_photo' => $this->ktpPhoto,
+            'channel' => $this->channel,
         ];
     }
 
